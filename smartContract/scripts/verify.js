@@ -21,11 +21,11 @@ const contractsToVerify = [
 		args: ["9999999999999999000000"],
 	},
 	{
-		address: contracts.ClaimShwanSuraksha[1],
+		address: contracts.ClaimDogSuraksha[1],
 		args: [],
 	},
 	{
-		address: contracts.ShwanSurksha[1],
+		address: contracts.DogSurksha[1],
 		args: [],
 	},
 ];

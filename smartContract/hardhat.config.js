@@ -13,15 +13,26 @@ module.exports = {
 		},
 	},
 
-	// networks: {
-	// 	polygon_mumbai: {
-	// 		url: process.env.POLYGON_TESTNET_URL,
-	// 		accounts: [process.env.PRIVATE_KEY],
-	// 	},
-	// },
-	// etherscan: {
-	// 	apiKey: {
-	// 		polygonMumbai: process.env.POLYGONSCAN_API_KEY,
-	// 	},
-	// },
+	networks: {
+		baseSepolia : {
+			url: "https://sepolia.base.org",
+			accounts: [process.env.PRIVATE_KEY],
+			gasPrice: 2000000000,
+		},
+	},
+	etherscan: {
+		apiKey: {
+			baseSepolia : process.env.scan_key,
+		},
+	},
+	// customChains: [
+	// 	{
+	// 	  network: "base-sepolia",
+	// 	  chainId: 84532,
+	// 	  urls: {
+	// 	   apiURL: "https://api-sepolia.basescan.org/api",
+	// 	   browserURL: "https://sepolia.basescan.org"
+	// 	  }
+	// 	}
+	//   ]
 };
