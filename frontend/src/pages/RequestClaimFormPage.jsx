@@ -8,7 +8,7 @@ const RequestClaimFormPage = () => {
 		<div className="flex flex-col min-h-screen">
 			<Header />
 			<div className="flex-grow">
-				{/* Pass the policyID as a prop to the RequestClaimForm component */}
+			
 				
 			</div>
 			<Footer />
