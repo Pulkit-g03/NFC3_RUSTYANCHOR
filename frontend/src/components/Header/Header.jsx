@@ -25,7 +25,7 @@ const Header = () => {
 		<header className="bg-gray-900 text-lg">
 			<div className="flex justify-between items-center px-4">
 				<Link to="/" className="text-white text-2xl font-bold cursor-pointer">
-					DogSuraksha
+					Dog Suraksha
 				</Link>
 				<ul className="flex space-x-7">
 					<li>
@@ -33,7 +33,7 @@ const Header = () => {
 							to="/quoteForm"
 							className="text-white hover:text-gray-300 cursor-pointer"
 						>
-							Get a Quote
+							Quotation
 						</Link>
 					</li>
 
@@ -51,7 +51,7 @@ const Header = () => {
 							to="/admin"
 							className="text-white hover:text-gray-300 cursor-pointer"
 						>
-							Admin
+							Members Login
 						</Link>
 					</li>
 
@@ -61,7 +61,7 @@ const Header = () => {
 							to="/howToInstructions"
 							className="text-white hover:text-gray-300 cursor-pointer"
 						>
-							How-to Instructions
+							Instructions/Help
 						</Link>
 					</li>
 				</ul>

@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
-import { heroImg } from "../../assets";
+import { dogimg } from "../../assets";
 
-const Hero = () => {
+const Body = () => {
 	return (
 		<div
 			className="bg-cover bg-center object-cover text-white flex flex-col justify-center"
 			style={{
-				backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)), url(${heroImg})`,
+				backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)), url(${dogimg})`,
 				backgroundSize: "100% 100%",
 				backgroundRepeat: "no-repeat",
 				backgroundPosition: "center",
@@ -37,4 +37,4 @@ const Hero = () => {
 	);
 };
 
-export default Hero;
+export default Body;

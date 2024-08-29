@@ -1,6 +1,6 @@
 import Header from "./Header/Header";
 import { Wallet } from "./Wallet/Wallet";
-import Hero from "./Hero/Hero";
+import Body from "./Body/Body";
 import Footer from "./Footer/Footer";
 import QuoteForm from "./QuoteForm/QuoteForm";
 import RequestClaimForm from "./Claim/User/RequestClaimForm";
@@ -11,7 +11,7 @@ import HowToInstructions from "./HowToInstructions/HowToInstructions";
 export {
 	Header,
 	Wallet,
-	Hero,
+	Body,
 	Footer,
 	QuoteForm,
 	Claim,
