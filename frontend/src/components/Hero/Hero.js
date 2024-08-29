@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
-import { dogimg } from "../../assets";
+import { heroImg } from "../../assets";
 
-const Body = () => {
+const Hero = () => {
 	return (
 		<div
 			className="bg-cover bg-center object-cover text-white flex flex-col justify-center"
 			style={{
-				backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)), url(${dogimg})`,
+				backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)), url(${heroImg})`,
 				backgroundSize: "100% 100%",
 				backgroundRepeat: "no-repeat",
 				backgroundPosition: "center",
@@ -21,9 +21,10 @@ const Body = () => {
 					</p>
 				</div>
 				<p className="text-xl w-2/3 text-center">
-                As a pet owner, you understand that unexpected accidents and illnesses can occur at any time,
-                and veterinary care can be costly.Dog Suraksha provides a range of insurance plans to help 
-                safeguard your dog's health and your finances.
+					As a pet owner, you know that unexpected accidents and illnesses can
+					happen at any time, and the cost of veterinary care can be quite
+					expensive. dogSuraksha offers a variety of insurance plans to help
+					you protect your dog's health and your finances.
 				</p>
 				<Link
 					to="/quoteForm"
@@ -36,4 +37,4 @@ const Body = () => {
 	);
 };
 
-export default Body;
+export default Hero;

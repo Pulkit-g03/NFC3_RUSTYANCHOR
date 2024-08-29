@@ -4,7 +4,7 @@ const Footer = () => {
 			<div className="container w-3/4 mx-auto">
 				<div className="flex flex-wrap justify-between">
 					<div className="w-full md:w-1/2 lg:w-1/3 mb-6 md:mb-0">
-						<h4 className="text-xl font-bold text-white mb-4">Dog Suraksha</h4>
+						<h4 className="text-xl font-bold text-white mb-4">DogSuraksha</h4>
 						<p className="text-white text-base">
 							Provides comprehensive coverage for your furry friend.
 						</p>
@@ -18,9 +18,7 @@ const Footer = () => {
 					</div>
 				</div>
 				<div className="mt-8 text-center">
-					<p className="text-white text-sm">
 					
-					</p>
 				</div>
 			</div>
 		</footer>
