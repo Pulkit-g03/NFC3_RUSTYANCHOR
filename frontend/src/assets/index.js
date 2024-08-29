@@ -1,3 +1,3 @@
-import heroImg from "./images/hero.webp";
+import dogimg from "./images/dog1.jpg";
 
-export { heroImg };
+export { dogimg};
