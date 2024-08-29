@@ -21,10 +21,9 @@ const Body = () => {
 					</p>
 				</div>
 				<p className="text-xl w-2/3 text-center">
-					As a pet owner, you know that unexpected accidents and illnesses can
-					happen at any time, and the cost of veterinary care can be quite
-					expensive. ShwanSuraksha offers a variety of insurance plans to help
-					you protect your dog's health and your finances.
+                As a pet owner, you understand that unexpected accidents and illnesses can occur at any time,
+                and veterinary care can be costly.Dog Suraksha provides a range of insurance plans to help 
+                safeguard your dog's health and your finances.
 				</p>
 				<Link
 					to="/quoteForm"

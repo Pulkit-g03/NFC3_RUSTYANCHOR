@@ -1,3 +1,3 @@
-import dogimg from "./images/dog1.jpg";
+import dogimg from "./images/dog2.webp";
 
 export { dogimg};
