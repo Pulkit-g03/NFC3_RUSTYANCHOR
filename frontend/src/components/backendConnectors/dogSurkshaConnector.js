@@ -122,7 +122,7 @@ export const addPolicy = async ({
 				policyType,
 				startTimestamp.toString(),
 				endTimestamp.toString(),
-				ipfsHash
+				""
 			);
 
 			const addPolicyRec = await addPolicyTx.wait();

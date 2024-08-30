@@ -57,7 +57,7 @@ const Claim = () => {
 
 					if (!response.ok) {
 						console.error(`Error fetching image for Policy ID: ${policyId}`);
-						continue; // Skip this policy and move to the next one
+						
 					}
 
 					const files = await response.files();
@@ -78,7 +78,7 @@ const Claim = () => {
 						region: data.data[9].region,
 						healthCondition: data.data[9].healthCondition,
 						policyType: data.data[7],
-						ipfsHash: image,
+						ipfsHash: "",
 					};
 
 					updatedPolicyData.push(policyData);

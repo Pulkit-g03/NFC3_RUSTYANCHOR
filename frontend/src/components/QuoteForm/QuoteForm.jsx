@@ -76,21 +76,22 @@ const QuoteForm = () => {
 
 		try {
 			setIsUploading(true);
-			const cid = await client.put(files);
+			//const cid = await client.put(files);
 			setIsUploading(false);
-			console.log("cid: ", cid);
+			
 
-			setCid(cid);
+			setCid("");
 
 			setPetDetails((prevPetDetails) => ({
 				...prevPetDetails,
-				ipfsHash: cid,
+				ipfsHash: "",
 			}));
 
 			// File submission was successful, handle the result as needed
 		} catch (error) {
 			console.error("Error submitting files:", error);
 			setIsUploading(false);
+
 		}
 	};
 

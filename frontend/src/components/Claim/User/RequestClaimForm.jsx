@@ -54,7 +54,7 @@ const RequestClaimForm = ({ policyId }) => {
 				policyId,
 				claimDetails,
 				veterinaryInfo,
-				cid,
+				"",
 				claimAmount
 			);
 
