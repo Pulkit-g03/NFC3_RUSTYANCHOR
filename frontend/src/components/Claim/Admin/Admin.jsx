@@ -15,7 +15,7 @@ const Admin = () => {
 	const [policyData, setPolicyData] = useState([]);
 	const [account, setAccount] = useState(null);
 	const [policyDetailsFetching, setPolicyDetailsFetching] = useState(false);
-	const [isDeployer, setIsDeployer] = useState(false);
+	const [isDeployer, setIsDeployer] = useState(true);
 
 	// whenever account changes fetch the new policy ids
 	useEffect(() => {
@@ -83,8 +83,9 @@ const Admin = () => {
 
 	useEffect(() => {
 		// Check if the current account matches the deployer address
+		//console.log(account.toLowerCase());
 		setIsDeployer(
-			account && account.toLowerCase() === deployerAddr.toLowerCase()
+			account && account === deployerAddr
 		);
 	}, [account, deployerAddr]);
 

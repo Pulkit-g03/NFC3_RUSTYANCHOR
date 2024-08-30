@@ -54,7 +54,8 @@ export const getWalletBal = async (address) => {
 			const bal = await contract.balanceOf(
 				address ? address : await signer.getAddress()
 			);
-
+			
+			console.log("balance",bal);
 			return {
 				balance: ethers.utils.formatUnits(bal, sixDecimals),
 				success: true,

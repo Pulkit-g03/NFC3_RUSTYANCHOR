@@ -1,4 +1,4 @@
-const { ethers } = require("ethers");
+const { ethers, utils } = require("ethers");
 
 export const getEthAddress = async () => {
 	try {
@@ -18,7 +18,7 @@ export const getEthAddress = async () => {
 };
 
 export const checkNetwork = async () => {
-	const targetNetworkId = "0x13881";
+	const targetNetworkId = utils.hexValue(84532);
 
 	if (window.ethereum) {
 		const currentChainId = await window.ethereum.request({
@@ -30,7 +30,7 @@ export const checkNetwork = async () => {
 		// return false is network id is different
 		return {
 			success: false,
-			msg: "Please Open Metamask and Connect The Polygon network",
+			msg: "Please Open Metamask and Connect The base",
 		};
 	}
 };
@@ -53,7 +53,7 @@ export const requestAccount = async (metaMask) => {
 			}
 			await provider.request({
 				method: "wallet_switchEthereumChain",
-				params: [{ chainId: "0x13881" }], // chainId must be in hexadecimal numbers
+				params: [{ chainId: utils.hexValue(84532) }], // chainId must be in hexadecimal numbers
 			});
 			await provider.request({
 				method: "eth_requestAccounts",
@@ -79,13 +79,13 @@ export const isConnected = async () => {
 	try {
 		if (window.ethereum) {
 			let chainId = window.ethereum.chainId;
-			if (chainId !== "0x13881") {
+			if (chainId !== utils.hexValue(84532)) {
 				const temp = await window.provider.request({
 					method: "wallet_switchEthereumChain",
-					params: [{ chainId: "0x13881" }], // chainId must be in hexadecimal numbers
+					params: [{ chainId: utils.hexValue(84532) }], // chainId must be in hexadecimal numbers
 				});
 			}
-			if (chainId === "0x13881") {
+			if (chainId === utils.hexValue(84532)) {
 				const provider = new ethers.providers.Web3Provider(window.ethereum);
 				const account = await provider.send("eth_requestAccounts", []);
 				return {

@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { useConnectWallet } from "./useConnectWallet";
+import { utils } from "ethers";
+
 
 export function Wallet() {
 	const { account, requestAccount, connectStatus } = useConnectWallet();
@@ -13,11 +15,81 @@ export function Wallet() {
 		}
 	}, [connectStatus]);
 
+	const connectWallet = async () => {
+		try {
+		  if (window.ethereum) {
+			try {
+			  const chain = await window.ethereum.request({ method: "eth_chainId" });
+			  if (chain === utils.hexValue(84532) ) {
+				const addressArray = await window.ethereum.request({
+				  method: "eth_requestAccounts",
+				});
+	  
+				console.log("addressArray", addressArray);
+				if (addressArray.length > 0) {
+				  return {
+					address: await addressArray[0],
+					// status: "👆🏽 Ethereum Wallet is connected.",
+				  };
+				} else {
+				  return 0;
+				}
+			  } else {
+				
+				await window.ethereum.request({
+				  method: "wallet_switchEthereumChain",
+				  params: [{ chainId: utils.hexValue(84532)  }],
+				});
+				const addressArray = await window.ethereum.request({
+				  method: "eth_requestAccounts",
+				});
+				if (addressArray.length > 0) {
+				  return {
+					address: await addressArray[0],
+				  };
+				}
+			  }
+			} catch (e) {
+			  // No exist base chain in your wallet
+			  const networkMap = {
+				Base_Testnet: {
+				  chainId: utils.hexValue(84532), // '0x89'
+				  chainName: "baseSepolia",
+				  nativeCurrency: { name: "ETH", symbol: "ETH", decimals: 18 },
+				  rpcUrls: ["https://sepolia.base.org"],
+				  blockExplorerUrls: ["https://sepolia.basescan.org"],
+				},
+			  };
+	  
+			  await window.ethereum.request({
+				method: "wallet_addEthereumChain",
+				params: [networkMap.Base_Testnet],
+			  });
+	  
+			  const addressArray = await window.ethereum.request({
+				method: "eth_requestAccounts",
+			  });
+			  if (addressArray.length > 0) {
+				return {
+				  address: await addressArray[0],
+				};
+			  }
+			}
+		  } else {
+			
+		  }
+		} catch (error) {
+		  console.log("error", error);
+		}
+	  };
+
 	const handleConnectWallet = async () => {
 		setIsLoading(true);
 		setErrorMsg("");
-
+		//await connectWallet()
 		const result = await requestAccount();
+		
+		
 
 		setIsLoading(false);
 

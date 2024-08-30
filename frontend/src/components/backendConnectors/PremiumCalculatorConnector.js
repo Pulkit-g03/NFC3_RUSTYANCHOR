@@ -46,6 +46,7 @@ export const calculatePremium = async ({
 			};
 		}
 	} catch (error) {
+		console.log(error);
 		return {
 			success: false,
 			msg: error.message,
